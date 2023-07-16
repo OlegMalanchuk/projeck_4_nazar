@@ -1,9 +1,10 @@
+import file.CrieterFile;
+import file.UserOutput;
+import file.WritingFile;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.List;
 import java.util.Scanner;
 
 public class Main
