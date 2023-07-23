@@ -84,6 +84,7 @@ public class Main
                         System.out.println("введіть свій новий нік");
                         System.out.println("введіть свій новий нік");
                         System.out.println("введіть свій новий нік");
+                        System.out.println("введіть свій новий нік");
 
                     }break;
 
