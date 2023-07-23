@@ -82,6 +82,8 @@ public class Main
                     else {
                         System.out.println("введети  нік та запамятайте його і зробіть запит ще 1 раз");
                         System.out.println("введіть свій новий нік");
+                        System.out.println("введіть свій новий нік");
+                        System.out.println("введіть свій новий нік");
 
                     }break;
 
