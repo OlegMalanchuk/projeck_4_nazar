@@ -56,8 +56,35 @@ public class Main
                     }
                     break;
                 case 2:
-                   UserOutput.outputUserFromFile();
-                    break;
+                    System.out.println("Ця інформація доступна тільки зареєстрованим користувачам\nТи зареєстрований ?\n1 = так 2 = ні");
+                    Scanner scam = new Scanner(System.in);
+                    int i = scam.nextInt();
+                    if (i == 1){
+                        System.out.println("підтвердіть користувача (нік) :");
+                        Scanner scannerNik = new Scanner(System.in);
+                        String nik  =scannerNik.nextLine();
+                        try (FileReader fileReader = new FileReader("newFile.txt");// це FileReader він знаходить шлях
+                             //до файлу з інформацією і дозволяє
+                             BufferedReader reader = new BufferedReader(fileReader)) {// вже BufferedReader читати самі стрічки із заданого файлу в ()
+                            String currentLine;// змінна якій кожного разу буде присвоювалося значення з файлу
+                            // перша стрічка ->currentLine ; друга стрічка ->currentLine;...  так далі
+                            while ((currentLine = reader.readLine()) != null) {//цикл йде доти поки не завершаться рядки з інфою в документі
+                                if (currentLine.equalsIgnoreCase(nik)) //тут ми порівнюємо інфу в документі та з веденої у консоль
+                                {
+                                    System.err.println("вдало підтвердили користувача!!");// виведе коли користувач існує
+                                    UserOutput.outputUserFromFile();
+                                    break;// ліваємо з циклу
+                                }
+                            }
+                        } catch (IOException ex) {
+                            System.err.println(ex);}
+                        break;}
+                    else {
+                        System.out.println("введети  нік та запамятайте його і зробіть запит ще 1 раз");
+                        System.out.println("введіть свій новий нік");
+
+                    }break;
+
                 case 3:
                     System.out.println("dd");
                     break;
@@ -68,7 +95,7 @@ public class Main
                     System.out.println("kk");
                     break;
                 case 5:
-                    Helpers.randomGeneratorText();
+                    RandomString.getAlphaNumericString();
                     break;
 
                 case 6:
@@ -80,6 +107,7 @@ public class Main
             }
 
             }
+
 
 
 
