@@ -21,6 +21,7 @@ public class Main
                 System.out.println(" ");
 
                 switch (choiceMmenu) {
+//***********************************************************************************************************************************
                     case 1:
                         CrieterFile.fileCreator();// ...
 
@@ -53,11 +54,11 @@ public class Main
                         }
                         break;
                     case 2:
+//***********************************************************************************************************************************
                         System.out.println("Ця інформація доступна тільки зареєстрованим користувачам\nТи зареєстрований ?\n1 = так 2 = ні");
-                        Scanner scam = new Scanner(System.in);
-                        int i = scam.nextInt();
-                        int h = 0;
-                        if (i == 1) {
+                        Scanner scam2 = new Scanner(System.in);
+                        int i2 = scam2.nextInt();
+                        if (i2 == 1) {
                             System.out.print("підтвердіть користувача (нік) :");
                             Scanner scannerNik = new Scanner(System.in);
                             String nik = scannerNik.nextLine();
@@ -73,31 +74,59 @@ public class Main
                                         UserOutput.outputUserFromFile();
                                         break;// ліваємо з циклу
                                     }
-                                    else h++;
+                                    else;
                                 }
                             } catch (IOException ex) {
                                 System.err.println(ex);
                             }
                         }else {}// я не єбу як воно працює але то сука правильно
-                    {System.out.println("перейдіть на перший пункт та зареєструйтеся ");}
+                        {System.out.println("перейдіть на перший пункт та зареєструйтеся ");}
                         break;
-
+//***********************************************************************************************************************************
                     case 3:
-                        System.out.println("test3");
+//                        System.out.println("test3");
+//                        System.out.println("Ця інформація доступна тільки зареєстрованим користувачам\nТи зареєстрований ?\n1 = так 2 = ні");
+//                        Scanner scam3 = new Scanner(System.in);
+//                        int i3 = scam3.nextInt();
+//                        if (i3 == 1) {
+//                            System.out.print("підтвердіть користувача (нік) :");
+//                            Scanner scannerNik = new Scanner(System.in);
+//                            String nik = scannerNik.nextLine();
+//                            try (FileReader fileReader = new FileReader("newFile.txt");// це FileReader він знаходить шлях
+//                                 //до файлу з інформацією і дозволяє
+//                                 BufferedReader reader = new BufferedReader(fileReader)) {// вже BufferedReader читати самі стрічки із заданого файлу в ()
+//                                String currentLine;// змінна якій кожного разу буде присвоювалося значення з файлу
+//                                // перша стрічка ->currentLine ; друга стрічка ->currentLine;...  так далі
+//                                while ((currentLine = reader.readLine()) != null) {//цикл йде доти поки не завершаться рядки з інфою в документі
+//                                    if (currentLine.equalsIgnoreCase(nik)) //тут ми порівнюємо інфу в документі та з веденої у консоль
+//                                    {
+//                                        System.out.println("вдало підтвердили користувача!!");// виведе коли користувач існує
+//                                        System.out.println("іформвція про користувача "+ nik);
+//                                       // ліваємо з циклу
+//                                    }
+//                                }break;
+//                            } catch (IOException ex) {
+//                                System.err.println(ex);
+//                            }
+//                        }else {System.out.println("перейдіть на перший пункт та зареєструйтеся ");}// я не єбу як воно працює але то сука правильно
+//
+//                        break;
+//***********************************************************************************************************************************
+                    case 4:
+                        System.out.println("test4");
+                        FileProcess.gg();
 
                         break;
-                case 4:
-                    System.out.println("test4");
-                    break;
-                case 5:
-                    RandomString.getAlphaNumericString();
-                    break;
-
-                case 6:
-                    System.out.println("exit");
-                    System.exit(1);
-                    break;
-                default:
+//***********************************************************************************************************************************
+                    case 5:
+                        RandomString.getAlphaNumericString();
+                        break;
+//***********************************************************************************************************************************
+                    case 6:
+                        System.out.println("exit");
+                        System.exit(1);
+                        break;
+                    default:
                     System.out.println("not correct writing");
             }
 
