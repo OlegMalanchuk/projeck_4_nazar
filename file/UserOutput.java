@@ -15,6 +15,7 @@ public class UserOutput {
                 System.out.println("[ "+line+" ]");
             }
             System.out.println("}");
+
         } catch (IOException e) {
             e.printStackTrace();
         }

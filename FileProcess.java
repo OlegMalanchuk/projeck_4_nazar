@@ -1,6 +1,9 @@
 import file.UserOutput;
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
 import java.util.Scanner;
 
 
@@ -14,7 +17,7 @@ public class FileProcess {
 
         String currentLine;
         Scanner dd = new Scanner(System.in);
-        System.out.println(" =");
+        System.out.print(" =");
         String f = dd.nextLine();
         while ((currentLine = reader.readLine()) != null) {
             if (null != currentLine && !currentLine.equalsIgnoreCase(f)) {
@@ -23,9 +26,16 @@ public class FileProcess {
         }
         writer.close();
         reader.close();
-        dd.close();
 
-        boolean successful = inputFile.renameTo(tempFile);
+
+//        boolean successful = inputFile.renameTo(tempFile);
+        Path inputPath = inputFile.toPath();
+        Path tempPath = tempFile.toPath();
+        // Використовуємо метод Files.move() для переміщення тимчасового файлу до вхідного файлу
+        // Якщо файл з таким ім'ям вже існує, ми замінюємо його
+        Files.move(tempPath, inputPath, StandardCopyOption.REPLACE_EXISTING);
+
+        boolean successful = true;
         System.out.println(successful);
         UserOutput.outputUserFromFile();
 
