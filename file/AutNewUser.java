@@ -6,19 +6,18 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class Verific {
-    public static void checkVerification() throws FileNotFoundException, IOException {
+public class AutNewUser{
+    public static void checkRegistration() throws FileNotFoundException, IOException {
         System.out.println("Ця інформація доступна тільки зареєстрованим користувачам\nТи зареєстрований ?\n1 = так 2 = ні");
         Scanner choice = new Scanner(System.in);
         int i = choice.nextInt();
-        if(i ==1)
+        if(i == 1)
         {
             Scanner scannerNik = new Scanner(System.in);
             int f = 0;
-            System.out.print("підтвердіть користувача (нік) :");
+            System.out.println("підтвердіть користувача (нік) :");
             String nik = scannerNik.nextLine();
-
-
+            System.out.println(" ");
 
             try (FileReader fileReader = new FileReader("newFile.txt"); BufferedReader reader = new BufferedReader(fileReader))
             {
@@ -28,18 +27,19 @@ public class Verific {
                 {
                     if (currentLine.equalsIgnoreCase(nik))
                     {
-                        System.out.println("вдало підтвердили користувача!!");
-                        System.out.println("іформвція про користувача " + nik);
-                        f ++;
-                        break;
+                        System.out.println("вдало підтвердили користувача!!\n"+"іформвція про користувача: " + nik);
+                        f ++;break;
                     }
                 }
-                if (f ==0){
-                    System.err.print("перейдіть на перший пункт та зареєструйтеся \n ");
-                }
+//                if (f ==0){
+//                    System.err.println("перейдіть на перший пункт та зареєструйтеся  ");
+//                }
             }
-        } else if (i == 2) {System.err.print("перейдіть на перший пункт та зареєструйтеся \n");
-            }
+        }
+        else if(i==2)
+        {
+            System.err.println("перейдіть на перший пункт та зареєструйтеся ");
+        }
     }
 
 

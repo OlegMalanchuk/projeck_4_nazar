@@ -1,6 +1,6 @@
 public class RandomString {
 
-    public static void getAlphaNumericString()
+    public static void generateRandomString()
     {
         int n = 40;
         // choose a Character random from this String
